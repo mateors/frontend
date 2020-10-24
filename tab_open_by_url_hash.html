@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab open by url hash</title>
+    <style>
+
+        [data-tab-content] {
+            display: none;
+        }
+
+        .active[data-tab-content] {
+            display: block;
+        }
+
+        .tabs {
+            display: flex;
+            /*justify-content: space-around;*/
+            list-style-type: none;
+            margin:0;
+            padding:0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .mr-6, .mx-6 {
+            margin-right: .75rem !important;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .tab.active{
+        /* background-color: #ccc;*/
+            color: #555;
+            padding-bottom: 9px !important;
+            border-bottom: 3px solid #555;
+        }
+
+        .tab:hover{
+            background-color: #aaa;
+        }
+
+        .tab-content {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .mdc-data-table{
+            background-color:transparent;
+            width:100%;
+        }
+
+        .margin-right{
+            margin-top: 12px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="dummy-tab">
+
+        <ul class="tabs">
+            <li class="tab active" data-tab-id="#customer">Customer</li>
+            <li class="tab" data-tab-id="#supplier">Supplier</li>
+            <li class="tab" data-tab-id="#other">Other</li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div id="customer" data-tab-content class="active">
+                <h1>Customer page</h1>
+                <p>Hello customer</p>
+                <p><a href="/index.html">Go Back to homepage</a></p>
+            </div>
+
+            <div id="supplier" data-tab-content>
+                <h1>Supplier page</h1>
+                <p>Hello supplier</p>
+                <p><a href="/index.html">Go Back to homepage</a></p>
+            </div>
+
+            <div id="other" data-tab-content>
+                <h1>Other page</h1>
+                <p>Hello other</p>
+                <p><a href="/index.html">Go Back to homepage</a></p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+ <script>
+
+        const tabs = document.querySelectorAll('[data-tab-id]');
+        const tabContents = document.querySelectorAll('[data-tab-content]');
+
+        tabs.forEach( tab => {
+
+            //console.log(tab);
+            tab.addEventListener('click', () => {
+
+                const target = document.querySelector(tab.dataset.tabId);
+                //console.log(tab.dataset.tabId);
+
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    //tab.parentElement.classList.remove("active");
+                    //console.log(tab);
+                });
+
+                tabContents.forEach(tabContent  => {
+                    tabContent.classList.remove('active');
+                });
+
+                tab.classList.add("active");
+                //tab.parentElement.classList.add("active");
+                //console.log();
+                target.classList.add('active');
+                //console.log(target);
+                
+            });
+
+
+        });
+
+
+      
+        var hash = window.location.hash;
+
+        if (hash != ''){
+
+            console.log(hash);
+            var tabElm=document.querySelector(`[data-tab-id="${hash}"]`);
+            //console.log(tabElm);
+            tabElm.click();
+            window.location.hash=hash;
+        }
+   
+
+ </script>
+
+</body>
+</html>
