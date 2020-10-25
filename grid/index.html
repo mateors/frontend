@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+    
+    body,html{
+      height:100vh;
+    }
+
+     .wrapper{
+        height:100vh;
+        display: grid;
+        grid-gap: 10px;
+        grid-row-gap:20px;
+        grid-template-columns: 2fr 1fr;  /*each column cell width*/
+        grid-template-rows: 2fr 2fr 2fr; /*each row cell height*/
+        grid-template-areas:  "form1 photo"
+                              "form2 photo"
+                              "tabs tabs";
+     }
+
+     .form1{
+        grid-area: form1;
+        background-color: aqua;
+     }
+
+     .form2{
+        grid-area: form2;
+        background-color: burlywood;
+     }
+
+     .photo{
+        grid-area: photo;
+        background-color: chocolate;
+     }
+
+     .tabs{
+        grid-area: tabs;
+        background-color: cornflowerblue;
+     }
+     
+    </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+
+  <div class="form1">
+    form1
+  </div>
+
+  <div class="form2">
+    form2
+  </div>
+
+  <div class="photo">
+    photo
+  </div>
+
+  <div class="tabs">
+    tabs
+  </div>
+
+</div>
+
+
+
+    
+</body>
+</html>
