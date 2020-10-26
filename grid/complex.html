@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area</title>
+    <style>
+
+        .container {
+            display: grid;
+            width: 100%;
+            height: 100vh;
+            /* grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-areas: "head head head"
+                                "nav  main right"
+                                "nav  foot .";
+
+        }
+
+        .container  > .header {
+            grid-area: head;
+            background-color: #8ca0ff;
+        }
+
+        .container > .nav {
+            grid-area: nav;
+            background-color: #ffa08c;
+        }
+
+        .container > .main {
+            grid-area: main;
+            background-color: #ffff64;
+        }
+
+        .container > .right {
+            grid-area: right;
+            background-color:darkblue;
+        }
+
+        .container > .footer {
+            grid-area: foot;
+            background-color: #8cffa0;
+        }
+    </style>
+</head>
+
+<body>
+    
+     <div class="container">
+        <div class="header">Header</div>
+        <div class="nav">Navigation</div>
+        <div class="main">Main area</div>
+        <div class="right">right</div>
+        <div class="footer">Footer</div>
+     </div>
+
+
+</body>
+</html>

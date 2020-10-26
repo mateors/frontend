@@ -10,36 +10,43 @@
       height:100vh;
     }
 
+     /*Grid container*/
      .wrapper{
         height:100vh;
         display: grid;
         grid-gap: 10px;
         grid-row-gap:20px;
-        grid-template-columns: 2fr 1fr;  /*each column cell width*/
+        grid-template-columns: 2fr 0.5fr;  /*each column cell width*/
         grid-template-rows: 2fr 2fr 2fr; /*each row cell height*/
         grid-template-areas:  "form1 photo"
                               "form2 photo"
                               "tabs tabs";
      }
 
+    /*Grid Item*/
      .form1{
         grid-area: form1;
         background-color: aqua;
      }
 
+     /*Grid Item*/
      .form2{
         grid-area: form2;
         background-color: burlywood;
      }
 
+      /*Grid Item*/
      .photo{
         grid-area: photo;
         background-color: chocolate;
+        height: 400px;
      }
 
+      /*Grid Item*/
      .tabs{
         grid-area: tabs;
         background-color: cornflowerblue;
+        
      }
      
     </style>
