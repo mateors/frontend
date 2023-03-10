@@ -8,3 +8,4 @@
 ## Web Components
 * [Web Components Crash Course](https://www.youtube.com/watch?v=PCWaFLy3VUo)
 * [Web Components - Custom Elements, Shadow DOM, Templates](https://www.youtube.com/watch?v=SNSXWeRuQ3A)
+* [Web Components](https://www.youtube.com/playlist?list=PLyuRouwmQCjnENQk6NJlckZRXOfQP0x5B)
